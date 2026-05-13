@@ -35,7 +35,6 @@
   }
 
   .hero-image,
-  .about-image,
   .solutions-image {
     max-height: 360px;
   }
@@ -57,7 +56,11 @@
 /* MOBILE */
 @media (max-width: 768px) {
   :root {
-     --section-padding: 48px 20px;
+    --section-padding: 48px 20px;
+  }
+
+  section {
+    padding: 48px 20px;
   }
 
   .header {
@@ -106,7 +109,18 @@
   }
 
   .hero {
-    padding-top: 96px;
+    min-height: auto;
+    padding-top: 92px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .hero-container,
+  .about-container,
+  .solutions-container,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .hero-title {
@@ -117,15 +131,56 @@
     font-size: 16px;
   }
 
+  .section-description {
+    margin-bottom: 28px;
+  }
+
   .hero-image,
-  .about-image,
   .solutions-image {
     height: 260px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Esconde a imagem "Equipe KofiTech reunida" no mobile */
+  .about-image {
+    display: none !important;
+  }
+
+  .about-container {
+    gap: 0 !important;
+  }
+
+  .about,
+  .solutions,
+  .team,
+  .contact {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .features-grid,
   .platform-grid {
     grid-template-columns: 1fr;
+  }
+
+  .platform-grid {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .platform-card {
+    min-height: 82px;
+    padding: 18px 22px;
+  }
+
+  .solutions-badge {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: -52px 24px 0;
+    justify-content: center;
   }
 
   .team-grid {
@@ -158,31 +213,86 @@
     --section-padding: 42px 16px;
   }
 
+  section {
+    padding: 42px 16px;
+  }
+
+  .hero {
+    padding-top: 86px;
+  }
+
+  .about,
+  .solutions,
+  .team,
+  .contact {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .hero-container,
+  .solutions-container,
+  .contact-grid {
+    gap: 24px;
+  }
+
   .hero-title {
-    font-size: 28px;
+    font-size: 44px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 32px;
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: 14px;
   }
 
   .btn-primary,
   .btn-outline {
     width: 100%;
+    height: 62px;
     justify-content: center;
+    font-size: 18px;
+    border-radius: 18px;
   }
 
-  .hero-image,
-  .about-image,
+  .hero-image {
+    margin-top: 12px;
+    height: 250px;
+    border-radius: 22px;
+  }
+
   .solutions-image {
     height: 220px;
+    border-radius: 22px;
+  }
+
+  .about-image {
+    display: none !important;
+  }
+
+  .platform-card {
+    min-height: 76px;
+    padding: 16px 20px;
+    font-size: 15px;
   }
 
   .solutions-badge {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    justify-content: center;
+    margin: -44px 20px 0;
+    padding: 16px;
+  }
+
+  .solutions-badge-number {
+    font-size: 26px;
+  }
+
+  .solutions-badge-label {
+    font-size: 14px;
   }
 
   .team-grid {
@@ -215,155 +325,4 @@
 
 .mobile-menu-toggle.open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 48px 20px;
-  }
-
-  .hero {
-    padding-top: 92px;
-    padding-bottom: 40px;
-  }
-
-  .about,
-  .solutions,
-  .team,
-  .contact {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
-  .hero-container,
-  .about-container,
-  .solutions-container,
-  .contact-grid {
-    gap: 28px;
-  }
-
-  .section-description {
-    margin-bottom: 28px;
-  }
-
-  .platform-grid {
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-
-  .platform-card {
-    min-height: 82px;
-    padding: 18px 22px;
-  }
-
-  .solutions-image {
-    height: 260px;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .about-image,
-  .hero-image {
-    height: 260px;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .solutions-badge {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin: -52px 24px 0;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 42px 16px;
-  }
-
-  .hero {
-    padding-top: 86px;
-  }
-
-  .about,
-  .solutions,
-  .team,
-  .contact {
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
-
-  .hero-container,
-  .about-container,
-  .solutions-container,
-  .contact-grid {
-    gap: 24px;
-  }
-
-  .platform-card {
-    min-height: 76px;
-    padding: 16px 20px;
-    font-size: 15px;
-  }
-
-  .solutions-image,
-  .about-image,
-  .hero-image {
-    height: 220px;
-    border-radius: 22px;
-  }
-
-  .solutions-badge {
-    margin: -44px 20px 0;
-    padding: 16px;
-  }
-
-  .solutions-badge-number {
-    font-size: 26px;
-  }
-
-  .solutions-badge-label {
-    font-size: 14px;
-  }
-}
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 44px;
-    line-height: 1.08;
-    letter-spacing: -2px;
-  }
-
-  .hero-description {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 32px;
-  }
-
-  .hero-buttons {
-    gap: 14px;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    height: 62px;
-    font-size: 18px;
-    border-radius: 18px;
-  }
-
-  .hero-image {
-    margin-top: 12px;
-    height: 250px;
-  }
-}
-@media (max-width: 768px) {
-  .about-image {
-    display: none;
-  }
-
-  .about-container {
-    gap: 0;
-  }
 }
