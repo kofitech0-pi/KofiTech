@@ -1,31 +1,75 @@
 /* ================= RESPONSIVE.CSS ================= */
 
-/* TABLET / NOTEBOOK */
-@media (max-width: 1024px) {
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
   :root {
-    --section-padding: 72px 32px;
+    --section-padding: 72px 40px;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .header {
-    padding: 14px 32px;
+    padding: 14px 40px;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .nav-menu {
+    gap: 4px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .btn-header {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 120px;
+    padding-bottom: 72px;
+    text-align: center;
   }
 
   .hero-container,
   .about-container,
   .solutions-container,
   .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
-  .hero {
-    min-height: auto;
-    padding-top: 110px;
+  .hero-content,
+  .about-content,
+  .solutions-container > div,
+  .contact-header {
+    width: 100%;
     text-align: center;
+  }
+
+  .hero-title {
+    font-size: 54px;
+    line-height: 1.08;
   }
 
   .hero-description,
   .section-description {
+    max-width: 620px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -34,22 +78,108 @@
     justify-content: center;
   }
 
+  .hero-image-wrapper,
+  .about-image-wrapper,
+  .solutions-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .hero-image,
+  .about-image,
   .solutions-image {
-    max-height: 360px;
+    width: 100%;
+    max-width: 620px;
+    height: 340px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+  }
+
+  .about-content {
+    order: 1;
+  }
+
+  .about-image-wrapper {
+    order: 2;
+  }
+
+  .features-grid,
+  .platform-grid {
+    width: 100%;
+    max-width: 620px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 800px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .team-card {
+    grid-column: span 2;
+  }
+
+  .team-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .team-card:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  .team-image {
+    height: 210px;
+  }
+
+  .contact-grid {
+    max-width: 720px;
   }
 
   .footer-container {
     grid-template-columns: 1fr 1fr;
+    gap: 36px;
   }
 
   .footer-brand {
     grid-column: 1 / -1;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 24px;
+    max-width: 720px;
+    width: 100%;
+    align-items: start;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .contact-info-card h3,
+  .contact-form-card h3 {
+    font-size: 18px;
+  }
+
+  .form-input {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  textarea.form-input {
+    height: 90px;
+  }
+
+  .btn-submit {
+    height: 44px;
   }
 }
 
@@ -142,11 +272,7 @@
     object-position: center;
   }
 
-  /* Esconde a imagem "Equipe KofiTech reunida" no mobile */
-  .about-image {
-    display: none !important;
-  }
-
+ 
   .about-container {
     gap: 0 !important;
   }
@@ -157,6 +283,21 @@
   .contact {
     padding-top: 48px;
     padding-bottom: 48px;
+  }
+  .about-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 340px;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
   }
 
   .features-grid,
@@ -221,20 +362,6 @@
     padding-top: 86px;
   }
 
-  .about,
-  .solutions,
-  .team,
-  .contact {
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
-
-  .hero-container,
-  .solutions-container,
-  .contact-grid {
-    gap: 24px;
-  }
-
   .hero-title {
     font-size: 44px;
     line-height: 1.08;
@@ -267,13 +394,15 @@
     border-radius: 22px;
   }
 
-  .solutions-image {
+  .about-image {
+    max-width: 100%;
     height: 220px;
     border-radius: 22px;
   }
-
-  .about-image {
-    display: none !important;
+  
+  .solutions-image {
+    height: 220px;
+    border-radius: 22px;
   }
 
   .platform-card {
@@ -285,14 +414,6 @@
   .solutions-badge {
     margin: -44px 20px 0;
     padding: 16px;
-  }
-
-  .solutions-badge-number {
-    font-size: 26px;
-  }
-
-  .solutions-badge-label {
-    font-size: 14px;
   }
 
   .team-grid {
@@ -327,99 +448,39 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* ================= TABLET ================= */
-@media (min-width: 769px) and (max-width: 1024px) {
-  :root {
-    --section-padding: 72px 40px;
-  }
-
-  .header {
-    padding: 14px 40px;
-  }
-
-  .logo img {
-    height: 38px;
-  }
-
-  .nav-menu {
-    gap: 4px;
-  }
-
-  .nav-link {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-
-  .btn-header {
-    padding: 9px 18px;
-    font-size: 13px;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-top: 120px;
-    padding-bottom: 72px;
-    text-align: center;
-  }
-
-  .hero-container,
-  .about-container,
-  .solutions-container,
+/* AJUSTE CONTATO */
+@media (max-width: 1024px) {
   .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 44px;
-  }
-
-  .hero-title {
-    font-size: 54px;
-    line-height: 1.08;
-  }
-
-  .hero-description {
-    max-width: 620px;
-    font-size: 18px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-image,
-  .about-image,
-  .solutions-image {
     width: 100%;
-    height: 380px;
-    object-fit: cover;
-    object-position: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 24px;
+    align-items: start;
   }
 
-  .features-grid,
-  .platform-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .contact-info-card,
+  .contact-form-card {
+    width: 100%;
+    padding: 24px;
   }
+}
 
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 760px;
+@media (max-width: 768px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .team-image {
-    height: 210px;
-  }
-
-  .contact-grid {
-    max-width: 720px;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
+  .contact-info-card,
+  .contact-form-card {
+    width: 100%;
   }
 }
