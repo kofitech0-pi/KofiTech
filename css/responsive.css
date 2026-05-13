@@ -358,3 +358,12 @@
     height: 250px;
   }
 }
+@media (max-width: 768px) {
+  .about-image {
+    display: none;
+  }
+
+  .about-container {
+    gap: 0;
+  }
+}
